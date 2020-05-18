@@ -31,6 +31,7 @@ def cityreader(cities=[]):
   # `cities` list
 
   with open('cities.csv', newline='') as csvfile:
+    next(csvfile) #fields head removed
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for row in spamreader:
       cities.append(City(row[0], row[3], row[4]))    
